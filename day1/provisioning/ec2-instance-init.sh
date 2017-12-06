@@ -8,8 +8,6 @@ sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat/jenkins.
 sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
 sudo yum -y remove java-1.7.0-openjdk
 sudo yum -y install java-1.8.0
-sudo yum -y install git
-
 
 sudo yum -y install docker
 sudo pip install docker-compose
