@@ -46,8 +46,11 @@ MY_CIDR=${MY_PUBLIC_IP}/32
 
 # Create an ingress over the public ip and port 80 for the security group.
 echo "Creating ingress for sec. group $SECURITY_GROUP_NAME"
-aws ec2 authorize-security-group-ingress --group-name ${SECURITY_GROUP_NAME} --protocol tcp --port 80 --cidr ${MY_CIDR} || echo "Done!"
-aws ec2 authorize-security-group-ingress --group-name ${SECURITY_GROUP_NAME} --protocol tcp --port 22 --cidr ${MY_CIDR} || echo "Done!"
+aws ec2 authorize-security-group-ingress --group-name ${SECURITY_GROUP_NAME} --protocol tcp --port 22 --cidr ${MY_CIDR} || echo "SSH..."
+aws ec2 authorize-security-group-ingress --group-name ${SECURITY_GROUP_NAME} --protocol tcp --port 80 --cidr ${MY_CIDR} || echo "HTTP..."
+aws ec2 authorize-security-group-ingress --group-name ${SECURITY_GROUP_NAME} --protocol tcp --port 8080 --cidr ${MY_CIDR} || echo "Jenkins..."
+echo "Done!"
+
 
 # Create EC2 instance, add a policy for our security group, and inject an instantiation script to the instance
 echo "Creating instance..."
