@@ -1,0 +1,5 @@
+# EC2 instance credentials
+./day1/provisioning/ec2_instance
+
+# Docker-compose .env
+.env
