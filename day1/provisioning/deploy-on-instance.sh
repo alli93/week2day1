@@ -14,7 +14,7 @@ echo "Status is okay!"
 echo "Deploying to ${INSTANCE_PUBLIC_NAME}"
 echo "Copying docker-compose.yml to EC2 instance"
 scp -o StrictHostKeyChecking=no -i "./ec2_instance/${SECURITY_GROUP_NAME}.pem" ./docker-compose.yml ec2-user@${INSTANCE_PUBLIC_NAME}:~/docker-compose.yml
-echo "Copying docker-compose-and-run..sh to EC2 instance"
+echo "Copying docker-compose-and-run.sh to EC2 instance"
 scp -o StrictHostKeyChecking=no -i "./ec2_instance/${SECURITY_GROUP_NAME}.pem" ./docker-compose-and-run.sh ec2-user@${INSTANCE_PUBLIC_NAME}:~/docker-compose-and-run.sh
 echo "Copying .env to EC2 instance"
 scp -o StrictHostKeyChecking=no -i "./ec2_instance/${SECURITY_GROUP_NAME}.pem" ../.env ec2-user@${INSTANCE_PUBLIC_NAME}:~/.env
